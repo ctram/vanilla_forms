@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Vanilla Forms</title>
+    <script src="./scripts/base.js" defer></script>
+  </head>
+  <body>
+    <h1>Register</h1>
+    <form action="/register" onsubmit="onSubmit(event)">
+      <fieldset>
+        <legend for="ice-cream">Choose an ice cream flavor:</legend>
+        <input list="ice-cream-list" id="ice-cream" name="ice-cream" placeholder="rainbow" />
+        <datalist id="ice-cream-list">
+          <option value="chocolate">chocolate</option>
+          <option value="vanilla" />
+        </datalist>
+      </fieldset>
+
+      <fieldset>
+        <legend for="dinosuar">Choose dino:</legend>
+        <select id="dinosaur" name="dinosaur">
+          <optgroup label="Therapods">
+            <option value="not tall">
+              Stand Tall Dino
+            </option>
+          </optgroup>
+          <optgroup label="Carnivours">
+            <option value="Stand short">stand short dino</option>
+          </optgroup>
+        </select>
+      </fieldset>
+
+      <fieldset>
+        <legend>Choose city:</legend>
+        <label for="fremont">Fremont</label>
+        <input id="fremont" type="radio" name="city" value="fremont" />
+        <label for="davis">Davis</label>
+        <input id="davis" type="radio" name="city" value="davis" checked />
+        <label for="berkeley">Berkeley</label>
+        <input id="berkeley" type="radio" name="city" value="berkeley" />
+      </fieldset>
+
+      <fieldset>
+        <legend>Pick as many toppings as desired:</legend>
+        <label for="sprinkles">Sprinkles</label>
+        <input id="sprinkles" type="checkbox" name="toppings" value="sprinkles" checked>
+        <label for="almonds">Almonds</label>
+        <input id="almonds" type="checkbox" name="toppings" value="almonds">
+        <label for="cherries">Cherries</label>
+        <input id="cherries" type="checkbox" name="toppings" value="cherries">
+      </fieldset>
+
+      <fieldset>
+        <legend>Choose a date:</legend>
+        <input type="date" name="date" value="2019-09-01" />
+      </fieldset>
+
+      <fieldset>
+        <legend>Choose number:</legend>
+        <input list="range" onchange="onChangeRange(event)" type="range" name="number" value="12" min="0" max="100" step="1.5" />
+        <datalist id="range">
+          <option>0</option>
+          <option>10</option>
+          <option>20</option>
+          <option>30</option>
+          <option>40</option>
+          <option label="50">50</option>
+          <option>60</option>
+          <option>70</option>
+          <option>80</option>
+          <option>90</option>
+          <option>100</option>
+        </datalist>
+        <output name="result"></output>
+      </fieldset>
+
+
+      <button type="submit">
+        Submit
+      </button>
+    </form>
+
+  </body>
+</html>
